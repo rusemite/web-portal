@@ -62,4 +62,7 @@ const lakes = ref<Lake[]>([
 { name: 'Озеро Дикое', lat: 54.840156, lng: 69.131957, patogens: "OтcytсTBуht"},
   {name: 'Озеро ГУсиное', lat: 54.79316, lng: 69.13508, patogens: "Порядочно"},
 ])
+
+
+
 </script>

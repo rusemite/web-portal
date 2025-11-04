@@ -11,7 +11,7 @@
           attribution="&copy; OpenStreetMap contributors"
       />
       <LMarker :lat-lng="petropavl" :draggable="false">
-        <LTooltip permanent direction = "top">Петропавловск (СКО)   </LTooltip>
+        <LTooltip permanent direction = "top">Петропавловск (СКО)  {{msg}}   </LTooltip>
         <LPopup>Петропавлоск, Северо-Казахстанская область</LPopup>
       </LMarker>
 
@@ -63,5 +63,12 @@ const lakes = ref<Lake[]>([
   {name: 'Озеро ГУсиное', lat: 54.79316, lng: 69.13508},
 ])
 
-</script>
+import {onMounted} from 'vue';
+import axios from 'axios';
 
+const msg = ref<string>("facebook.png")
+onMounted(async () => {
+  const mug = await axios.get("http://localhost:8080/api/4/4")
+  msg.value = mug.data
+})
+</script>
